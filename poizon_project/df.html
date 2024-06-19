@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Слайдер</title>
+  <style>
+    .slider-container {
+      width: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slide"><img src="img1.jpg" alt="Изображение 1"></div>
+      <div class="slide"><img src="img2.jpg" alt="Изображение 2"></div>
+      <div class="slide"><img src="img3.jpg" alt="Изображение 3"></div>
+      <div class="slide"><img src="img4.jpg" alt="Изображение 4"></div>
+      <div class="slide"><img src="img5.jpg" alt="Изображение 5"></div>
+      <div class="slide"><img src="img6.jpg" alt="Изображение 6"></div>
+      <div class="slide"><img src="img7.jpg" alt="Изображение 7"></div>
+      <div class="slide"><img src="img8.jpg" alt="Изображение 8"></div>
+    </div>
+
+    <button class="arrow arrow-left">&#10094;</button>
+    <button class="arrow arrow-right">&#10095;</button>
+  </div>
+
+  <script>
+    const slider = document.querySelector('.slider');
+    const arrowLeft = document.querySelector('.arrow-left');
+    const arrowRight = document.querySelector('.arrow-right');
+    const slides = document.querySelectorAll('.slide');
+
+    let currentPosition = 0;
+
+    arrowRight.addEventListener('click', () => {
+      currentPosition = (currentPosition + 1) % slides.length;
+      slider.style.transform = `translateX(-${currentPosition * 110}px)`; // 110px - ширина слайда + отступ
+    });
+
+    arrowLeft.addEventListener('click', () => {
+      currentPosition = (currentPosition - 1 + slides.length) % slides.length;
+      slider.style.transform = `translateX(-${currentPosition * 110}px)`;
+    });
+  </script>
+</body>
+</html>

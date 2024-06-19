@@ -1,0 +1,432 @@
+.body__wrapper {
+    min-height: 2100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main {
+    position: relative;
+}
+
+.main__container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1245px;
+    min-height: 1700px;
+}
+
+.about-store {
+    display: flex;
+    flex-direction: column;
+
+
+    padding-top: 30px;
+    padding-bottom: 130px;
+}
+
+.about-store__store {
+    height: 120px;
+    align-self: flex-start;
+    position: relative;
+}
+
+.about-store__text {
+    font-family: var(--first-family);
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #fff;
+    align-self: flex-end;
+    width: 75%;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+}
+
+.filters-list {
+    display: flex;
+    padding: 12px 0;
+}
+
+.filters__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters-list__item {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filters-list__item:last-of-type {
+    margin-right: 0px;
+}
+
+.filters-list__item.filter1-active .arrow, 
+.filters-list__item.filter2-active .arrow,
+.filters-list__item.filter3-active .arrow {
+    transform: rotate(180deg);
+    transition: transform .2s ease-in-out;
+}
+
+.filters-list__item.filter1-active .filters-list__item-text,
+.filters-list__item.filter2-active .filters-list__item-text,
+.filters-list__item.filter3-active .filters-list__item-text {
+    letter-spacing: -0.01em;
+    color: rgba(166, 166, 166, 1);
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); 
+    }
+}
+
+#brand, #select-cost, #size {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.brand.active,
+.select-cost.active,
+.size.active {
+    opacity: 1;
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+    transform: translateY(0)
+}
+
+.filters-list__item-text {
+    font-family: var(--font10);
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.filters-list__item_filters-icon {
+    display: none;
+}
+
+.filters-list__item_filters-icon.active .filters-list__item-text {
+    color: rgba(166, 166, 166, 1);
+}
+
+.filters-list__item_filters-icon > .filters-icon {
+    height: 30px; 
+    cursor: pointer;
+}
+
+.filters-list__item_filters-icon.active .cls1 {
+    fill: #A6A6A6;
+}
+
+.arrow {
+    transition: transform .2s ease-in-out;
+    padding-top: 10px;
+}
+
+.filters-ready-button {
+    font-family: var(--font4);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.00em;
+    font-style: italic;
+    color: #fff;
+    background: rgba(167, 100, 255, 0.75);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 0 12px;
+    transition: all 0.02s ease-in-out;
+}
+
+.filters-ready-button:active {
+    transform: scale(0.96);
+}
+
+.select-filter {
+    display: flex;
+    position: relative;
+}
+
+.select-filter__margin {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.brand {
+    display: none;
+    transition: all 0.3s ease-in-out;
+    flex-direction: column;
+    align-items: flex-start;
+    user-select: none;
+    border-radius: 5px;
+    background-color: white;
+    padding: 12px 41px 12px 17px;
+    z-index: 2;
+}
+
+.brand__wrapper, .size__wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end
+}
+
+.brand__select-label, .size__select-label {
+    user-select: none;
+    font-family: var(--font11);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: -0.03em;
+    color: #000;
+    cursor: pointer;
+}
+
+.brand__select-input {
+    margin-right: 12px;
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.select-cost {
+    display: none;
+    /* display: flex; */
+    transition: all 0.3s ease-in-out;
+    left: 368px;
+    z-index: 2;
+    flex-direction: column;
+    width: 254px;
+    height: 135px;
+    background-color: transparent;
+    justify-content: space-between
+}
+
+.cost-block-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cost-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cost-from__text {
+    font-family: var(--font3);
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.1em;
+    color: #fff;
+    padding-bottom: 5px;
+}
+
+.cost-from__input {
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.52);
+    border-radius: 3px;
+    background: #d7d7d7;
+    height: 36px;
+    width: 112px;
+    font-family: var(--font4);
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+    color: #000;
+    outline: none;
+    caret-color: black;
+}
+
+.ready-button {
+    border-radius: 8px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background: #2ce0d5;
+    font-family: var(--font4);
+    font-weight: 700;
+    font-size: 19px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: all 0.02s ease-in-out;
+}
+
+.ready-button:active {
+    transform: scale(0.96);
+}
+
+.size {
+    display: none;
+    transition: all 0.3s ease-in-out;
+    left: 174px;
+    z-index: 3;
+    justify-content: space-between;
+    background-color: white;
+    padding: 17px 34px 17px 17px;
+    border-radius: 5px;
+    width: 269px;
+    height: 134px;
+}
+
+.size__column {
+    display: flex;
+    flex-direction: column;
+}
+
+.red-cross {
+    position: absolute;
+    cursor: pointer;
+    top: 0px;
+    right: -40px;
+    transition: all 0.02s ease-in-out;
+}
+
+.red-cross:active {
+    transform: scale(0.96);
+}
+
+.sneakers.active {
+    /* display: flex;
+    justify-content: space-between;
+    height: 970px;
+    width: 100%; */
+
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 55px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 66px;
+    padding-bottom: 84px;
+    animation: fadeIn 1s ease-in-out;
+    transform: translateY(0)
+}
+
+.sneakers_page2, .sneakers_page1 {
+    transition: all 0.3s ease-in-out;
+    display: none;
+}
+
+.sneakers__item {
+    background-color: white;
+    vertical-align: middle;
+    border-radius: 30px;
+    box-shadow: inset 0 0 40px 5px rgba(167, 100, 255, 0.75);
+    background: rgba(29, 29, 29, 0.1);
+    padding: 29px 20px 12px 22px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.sneakers__item:hover {
+    transform: scale(1.02);
+}
+
+.sneakers__item:active {
+    transform: scale(0.98);
+}
+
+.sneakers__item-sneaker {
+    background-size: cover;
+    user-select: none;
+}
+
+.sneakers__item-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 110px;
+}
+
+.sneakers__item-name, .sneakers__item-cost {
+    font-family: var(--font3);
+    color: #fff;
+    text-shadow: 
+        -0   -1px 0   #000000,
+        0   -1px 0   #000000,
+        -0    1px 0   #000000,
+        0    1px 0   #000000,
+        -1px -0   0   #000000,
+        1px -0   0   #000000,
+        -1px  0   0   #000000,
+        1px  0   0   #000000,
+        -1px -1px 0   #000000,
+        1px -1px 0   #000000,
+        -1px  1px 0   #000000,
+        1px  1px 0   #000000,
+        -1px -1px 0   #000000,
+        1px -1px 0   #000000,
+        -1px  1px 0   #000000,
+        1px  1px 0   #000000;
+}
+
+.sneakers__item-name {
+    letter-spacing: 0.04em;
+    font-weight: 350;
+    font-size: 28px;
+    margin-top: 22px;
+}
+
+.sneakers__item-cost {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.forward-back-arrow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 135px;
+}
+
+.back-arrow, .forward-arrow {
+    /* cursor: pointer; */
+    user-select: none;
+    transition: all 0.02s ease-in-out;
+}
+
+.back-arrow {
+    opacity: 0;
+    display: none;
+}
+
+.forward-arrow {
+    opacity: 0;
+    display: none;
+}
+
+.forward-arrow.active, .back-arrow.active {
+    opacity: 1;
+    display: block;
+    cursor: pointer;
+}
+
+.back-arrow:active, .forward-arrow:active {
+    transform: scale(0.96);
+}
